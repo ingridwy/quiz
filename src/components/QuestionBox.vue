@@ -4,7 +4,7 @@
         <template v-slot:header>Question</template>
 
         <template v-slot:lead>
-        Q
+        {{ thisQuestion.question }}
         </template>
 
         <hr class="my-4">
@@ -19,3 +19,10 @@
     </div>
 
 </template>
+<script>
+    export default { 
+        props: {
+            thisQuestion: Object
+        }
+    }
+</script>

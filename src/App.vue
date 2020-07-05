@@ -4,7 +4,9 @@
 <b-container class="bv-example-row">
   <b-row>
     <b-col sm="8" offset="2"> 
-      <QuestionBox />
+      <QuestionBox 
+      :thisQuestion = "questions[index]" 
+      /> 
     </b-col>
   
   </b-row>
@@ -23,12 +25,22 @@ export default {
     Header, 
     QuestionBox
   },
+  data() {
+    return {
+      questions: [],
+      index: 0
+    }
+  },
+
   mounted: function () {
     fetch ('https://opentdb.com/api.php?amount=10&category=27&type=multiple',{
       method: 'get'
     })
       .then((response)=>{
-        console.log(response.json() )
+        return response.json()
+      })
+      .then((jsonData)=>{
+        this.questions = jsonData.results
       })
 
   }
