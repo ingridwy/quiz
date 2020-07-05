@@ -24,6 +24,10 @@
         props: {
             thisQuestion: Object,
             next: Function
-        }
+        },
+        mounted() {
+        console.log(this.thisQuestion)
     }
+    }
+    
 </script>
