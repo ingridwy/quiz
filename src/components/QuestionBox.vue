@@ -14,7 +14,7 @@
         </p>
 
         <b-button variant="primary" href="#">Submit</b-button>
-        <b-button variant="success" href="#">Next Q</b-button>
+        <b-button @click="next" variant="success" href="#">Next Q</b-button>
     </b-jumbotron>
     </div>
 
@@ -22,7 +22,8 @@
 <script>
     export default { 
         props: {
-            thisQuestion: Object
+            thisQuestion: Object,
+            next: Function
         }
     }
 </script>
