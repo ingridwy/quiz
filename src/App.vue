@@ -6,7 +6,7 @@
     <b-col sm="8" offset="2"> 
       <QuestionBox 
       v-if="questions.length"
-      :thisQuestion = "questions[index]" 
+      :theQuestion = "questions[index]" 
       :next = "next"
       /> 
     </b-col>
