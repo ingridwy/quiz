@@ -8,7 +8,7 @@
         </template>
 
         <hr class="my-4">
-            <b-list-group v-for="(answer,index) in answers" :key="index">
+            <b-list-group v-for="(answer,index) in answers" :key="index" @click="select(index)">
                 <b-list-group-item>{{ answer }}</b-list-group-item>
             </b-list-group>
 
@@ -24,6 +24,16 @@
             theQuestion: Object,
             next: Function
         },
+        data() {
+            return{
+                selectIndex: null
+                } 
+        },
+        methods:{
+            select(index) {
+                this.selectIndex = index
+            }
+        }, 
         computed:{
             answers(){
                 let answers=[...this.theQuestion.incorrect_answers]
@@ -37,3 +47,25 @@
     }
     
 </script>
+<style scoped>
+.list-group{
+    margin :10px;
+}
+.list-group-item:hover{
+    background-color: #E5E5E5;
+}
+.btn{
+    margin: 5px;
+}
+.selected{
+    background-color: #E5E5E5;
+}
+.right{
+    background-color: green;
+}
+.wrong{
+    background-color:red;
+}
+
+
+</style>
