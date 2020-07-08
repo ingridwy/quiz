@@ -42,9 +42,12 @@
             }
         },
         watch:{
-            theQuestion(){
-                this.selectIndex = null
-                this.shuffleAnswer()
+            theQuestion:{
+                immediate: true,
+                handler() {
+                    this.selectIndex = null
+                    this.shuffleAnswer()
+                } 
             }
         },
         methods:{
@@ -64,7 +67,10 @@
 </script>
 <style scoped>
 .list-group{
-    margin :10px;
+    margin: 10px;
+}
+.list-group-item{
+    margin: 10px;
 }
 .list-group-item:hover{
     background-color: #E5E5E5;
