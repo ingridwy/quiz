@@ -105,11 +105,11 @@
 .selected{
     background-color: #FFB6C1;
 }
-.right{
-    background-color: green;
+.right, .right:hover{
+    background-color:#b2dfbd;
 }
-.wrong{
-    background-color: red;
+.wrong, .wrong:hover{
+    background-color:#ff6864;
 }
 
 
