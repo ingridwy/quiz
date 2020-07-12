@@ -15,8 +15,8 @@
                 </b-list-group-item>
             </b-list-group>
  
-        <b-button variant="primary" @click="submitAnswer">Submit</b-button>
-        <b-button @click="next" variant="success" >Next Q</b-button>
+        <b-button variant="primary" @click="submitAnswer" :disabled="selectIndex === null || answered">Submit</b-button>
+        <b-button @click="next" variant="success" >Next Q</b-button> 
     </b-jumbotron>
     </div>
 
@@ -32,7 +32,8 @@
         data() {
             return{
                 selectIndex: null,
-                shuffledAnswer: []
+                shuffledAnswer: [],
+                answered: false
                 } 
         },  
         computed:{
@@ -47,6 +48,7 @@
                 immediate: true,
                 handler() {
                     this.selectIndex = null
+                    this.answered = false
                     this.shuffleAnswer()
                 } 
             }
@@ -65,6 +67,7 @@
                 if (this.selectIndex === this.correctIndex){
                     isCorrect = true
                 }
+                this.answered = true
                 this.increment(isCorrect)
             }
 
