@@ -10,7 +10,7 @@
         <hr class="my-4">
             <b-list-group >
                 <b-list-group-item v-for="(answer,index) in answers" :key="index" @click="select(index)"
-                :class="[selectIndex === index?  'selected' : '']">
+                :class="answerClass(index)">
                     {{ answer }} 
                 </b-list-group-item>
             </b-list-group>
@@ -33,6 +33,7 @@
             return{
                 selectIndex: null,
                 shuffledAnswer: [],
+                correctIndex: null,
                 answered: false
                 } 
         },  
@@ -61,6 +62,7 @@
             shuffleAnswer(){
                 let answers = [...this.theQuestion.incorrect_answers , this.theQuestion.correct_answer]
                 this.shuffledAnswer = _.shuffle(answers)
+                this.correctIndex = this.shuffledAnswer.indexOf(this.theQuestion.correct_answer)
             },
             submitAnswer(){
                 let isCorrect = false
@@ -69,11 +71,22 @@
                 }
                 this.answered = true
                 this.increment(isCorrect)
+            },
+            answerClass(index){
+                let answerClass = ''
+                if(!this.answered && this.selectIndex === index){
+                    answerClass = 'selected'
+                } else if(this.answered && this.correctIndex === index){
+                    answerClass = 'right' 
+                } else if(this.answered && this.selectIndex === index && this.correctIndex !== index){
+                    answerClass = 'wrong'
+                }
+                return answerClass
             }
 
         }
       
-    }
+    } 
     
 </script>
 <style scoped>
@@ -96,7 +109,7 @@
     background-color: green;
 }
 .wrong{
-    background-color:red;
+    background-color: red;
 }
 
 
