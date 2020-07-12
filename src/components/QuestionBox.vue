@@ -1,7 +1,7 @@
 <template>
     <div class="question-box">
     <b-jumbotron>
-        <template v-slot:header>Question</template>
+        <template v-slot:header>Film Quiz</template>
 
         <template v-slot:lead>
         {{ theQuestion.question }}
@@ -16,7 +16,7 @@
             </b-list-group>
  
         <b-button variant="primary" @click="submitAnswer" :disabled="selectIndex === null || answered">Submit</b-button>
-        <b-button @click="next" variant="success" >Next Q</b-button> 
+        <b-button @click="next" variant="success" >Next Question</b-button> 
     </b-jumbotron>
     </div>
 
@@ -111,6 +111,22 @@
 .wrong, .wrong:hover{
     background-color:#ff6864;
 }
-
+.btn{
+    color: #8FC1A9!important;
+    text-transform: uppercase;
+    background: #ffffff;
+    padding: 10px;
+    border: 4px solid #8FC1A9 !important;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+    margin: 20px;
+}
+.btn:hover{
+    color:#8FC1A9 !important;
+    border-radius: 50px;
+    border-color: #8FC1A9!important;
+    transition: all 0.3s ease 0s;
+}
 
 </style>
