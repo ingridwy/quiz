@@ -1,6 +1,6 @@
 # funQuizzz
 ## About
-funQuizzz is a single page web app which include 10 quiz questions about film.，<br>
+funQuizzz is a single page web app which include 10 quiz questions about film.<br>
 Using:<br>
 * vue.js<br>
 * bootstrap-vue<br>
