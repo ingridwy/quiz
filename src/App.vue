@@ -41,7 +41,12 @@ export default {
   },
   methods:{
     next: function () {
-      this.index++
+      if(this.numTotal<10){
+        this.index++
+      } else{
+        location.reload();
+      }
+      
     },
     increment(isCorrect ){
       if (isCorrect){
