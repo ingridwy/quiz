@@ -16,7 +16,7 @@
             </b-list-group>
  
         <b-button variant="primary" @click="submitAnswer" :disabled="selectIndex === null || answered">Submit</b-button>
-        <b-button @click="next" variant="success" >Next Question</b-button> 
+        <b-button @click="next" :disabled="selectIndex === null || !answered" variant="success" >Next Question</b-button> 
     </b-jumbotron>
     </div>
 
