@@ -5,6 +5,7 @@ Using:<br>
 * vue.js<br>
 * bootstrap-vue<br>
 * REST API<br>
+* Heroku
 ---
 LinkedIn:[Ingrid Cheng](https://www.linkedin.com/in/ingrid-cheng/)<br>
 Website Link: [Film Quiz](https://funquizzz.herokuapp.com/)<br>
