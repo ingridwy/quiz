@@ -90,14 +90,20 @@
     
 </script>
 <style scoped>
+.jumbotron{
+    background-color: #e7e5f3;
+    border-radius: 20px;
+}
 .list-group{
     margin: 10px;
 }
 .list-group-item{
     margin: 10px;
+    border-radius: 0 25px 0 25px;
 }
 .list-group-item:hover{
     background-color: #E5E5E5;
+    border-radius: 0 25px 0 25px;
 }
 .btn{
     margin: 5px;
