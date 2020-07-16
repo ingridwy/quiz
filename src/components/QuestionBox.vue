@@ -94,6 +94,10 @@
     background-color: #e7e5f3;
     border-radius: 20px;
 }
+.jumbotron h1{
+    font-family: 'Grenze Gotisch', cursive;
+}
+ 
 .list-group{
     margin: 10px;
 }
